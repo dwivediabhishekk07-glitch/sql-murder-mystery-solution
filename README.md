@@ -2,6 +2,11 @@
 
 > Solving a murder investigation using pure SQL — from crime scene to hidden mastermind.
 
+[![SQL](https://img.shields.io/badge/SQL-SQLite-blue?logo=sqlite&logoColor=white)](https://mystery.knightlab.com/)
+[![Status](https://img.shields.io/badge/Case-Solved%20✔-brightgreen)]()
+[![Level](https://img.shields.io/badge/Level-Advanced-red)]()
+[![Concepts](https://img.shields.io/badge/Concepts-JOINs%20%7C%20CTEs%20%7C%20Subqueries-orange)]()
+
 ---
 
 ## 📌 About This Project
@@ -264,13 +269,22 @@ JOIN income            i ON i.ssn = mp.ssn;
 2. Paste queries from [`solution.sql`](./solution.sql) one step at a time
 
 **Option 2 — Local SQLite**
-
+```bash
 # Download the DB from the repo or use the uploaded .db file
 sqlite3 sql-murder-mystery.db
 # Then paste queries interactively
 ```
 
+**Option 3 — Python**
+```python
+import sqlite3
+conn = sqlite3.connect('sql-murder-mystery.db')
+cur = conn.cursor()
+cur.execute("SELECT * FROM crime_scene_report WHERE city='SQL City' AND date=20180115")
+print(cur.fetchall())
+```
 
+---
 
 ## 📁 Files
 
@@ -281,4 +295,6 @@ sqlite3 sql-murder-mystery.db
 ```
 
 
+---
 
+*Challenge by [Knight Lab, Northwestern University](https://knightlab.northwestern.edu/) · Solved with SQL 🔍*
